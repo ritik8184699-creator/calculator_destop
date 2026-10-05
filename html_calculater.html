@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Calculator</title>
+
+    <style>
+        .box{
+            width:300px;
+            margin:auto;
+            margin-top:100px;
+            text-align:center;
+            background-color: lightblue;
+        }
+
+        #screen{
+            width:280px;
+            height:40px;
+            font-size:20px;
+        }
+
+        button{
+            width:65px;
+            height:50px;
+            margin:2px;
+            font-size:18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>Calculator</h2>
+
+    <input type="text" id="screen" readonly>
+    <br><br>
+
+    <button onclick="add('7')">7</button>
+    <button onclick="add('8')">8</button>
+    <button onclick="add('9')">9</button>
+    <button onclick="add('/')">/</button>
+
+    <br>
+
+    <button onclick="add('4')">4</button>
+    <button onclick="add('5')">5</button>
+    <button onclick="add('6')">6</button>
+    <button onclick="add('*')">*</button>
+
+    <br>
+
+    <button onclick="add('1')">1</button>
+    <button onclick="add('2')">2</button>
+    <button onclick="add('3')">3</button>
+    <button onclick="add('-')">-</button>
+
+    <br>
+
+    <button onclick="add('0')">0</button>
+    <button onclick="add('.')">.</button>
+    <button onclick="answer()">=</button>
+    <button onclick="add('+')">+</button>
+
+    <br><br>
+
+    <button onclick="clearAll()">Clear</button>
+
+</div>
+
+<script>
+
+function add(value)
+{
+    document.getElementById("screen").value += value;
+}
+
+function clearAll()
+{
+    document.getElementById("screen").value = "";
+}
+
+function answer()
+{
+    var x = document.getElementById("screen").value;
+    document.getElementById("screen").value = eval(x);
+}
+
+</script>
+
+</body>
+</html>
